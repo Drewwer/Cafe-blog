@@ -1,0 +1,345 @@
+@import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&display=swap');
+
+:root {
+    --light:#D9A491;
+    --primary:#A65E44; 
+    --strong:#591202;
+    --dark:#260101;
+    --contrast: #F2F2F2;
+    
+    --fuentePrincipal: 'Jost', sans-serif;
+    --fuenteSecundario:'PT Sans', sans-serif;
+}
+html{
+    box-sizing: border-box;
+    font-size: 62.5%;
+}
+*, *:before, *:after{
+    box-sizing: inherit;
+}
+
+
+/* ------------------------------------------------------------ 
+------ GLOBALS                                     
+------------------------------------------------------------ */
+body{
+    background:var(--contrast);
+    font-size: 1.6rem;
+    line-height: 1.5; /* toma la medida de la base de la fuente - > font-size */
+}
+p{
+    font-size: 1.5rem;
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--dark);
+}
+a{
+    text-decoration: none;
+}
+img{
+    max-width: 100%;
+}
+h1, h2, h3{
+    text-align: center;
+    color: var(--dark);
+    font-family: var(--fuentePrincipal);
+}
+h1{
+    font-size: 4rem;
+}
+h2{
+    font-size: 3.2rem;
+}
+h3{
+    font-size: 2.4rem;
+}
+
+
+/* ------------------------------------------------------------ 
+------ HEADER                                   
+------------------------------------------------------------ */
+.header{
+    height: 55vh;
+    background-image: url(../img/banner.jpg);
+    background-position: center;
+    display: grid;
+    grid-template-rows: 1fr 3fr ;
+}
+
+.header__nav{
+    grid-row:1/2 ;
+    display: flex;
+    padding:  0 5%;
+    justify-content: space-between;
+}
+.header__logo{
+    display: flex;
+    align-items:flex-end;
+}
+.header__logo img{
+    height:  6rem;
+    width: 100%;
+    object-fit: cover;
+    
+}
+.header__links{
+    display: flex;
+    align-items:flex-end;
+}
+.header__links a{
+    color: rgba(255, 255, 255, 0.699);
+    font-family: var(--fuentePrincipal);
+    font-size: 2rem;
+    margin: 2rem;
+}
+.header__links a:hover{
+    color: white;
+}
+.header__mensaje{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+   
+}
+.header__mensaje h1{
+    color: white;
+    font-family: var(--fuentePrincipal);
+    font-weight: 500;
+    margin: .7rem;
+}
+.header__mensaje p{
+    color: rgba(255, 255, 255, 0.699);
+    font-family:var(--fuentePrincipal) ;
+    font-weight: 300;
+    text-align: center;
+}
+
+@media (max-width:480px){
+    .header{
+        height: 80vh;
+        grid-template-rows: repeat(2, 1fr);
+    }
+    
+    .header__nav{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .header__logo{
+        height: 50%;
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+    }
+    .header__logo img{
+        height: 10rem;
+    }
+    .header__links{
+        height: 50%;
+        width: 100%;
+    }
+    .header__links{
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+    }
+    .header__links a{
+        margin: .5rem;
+    }
+    .header__links a:hover{
+        letter-spacing: .5rem;
+        color: rgb(255, 255, 255);
+        font-weight: 700;
+    }
+    
+}
+/* ------------------------------------------------------------ 
+------ CONTENIDO-PAGINA                                   
+------------------------------------------------------------ */
+.contenido-pagina{
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    margin: 0 15vw;
+    gap: 2rem;
+    padding: 1rem 0;
+}
+.contenido-pagina img{
+    object-fit: cover;
+}
+.contenido-pagina h2, .contenido-pagina h3{ 
+    text-align: start;
+    padding: 1rem 0;
+    font-family: var(--fuenteSecundario);
+}
+.contenido-pagina__entrada{
+    margin-top: 2rem;
+}
+.boton-entrada{
+    display: flex;
+    width: 12rem;
+    height: 4rem;
+    margin: .5rem 0;
+    background-color: var(--dark);
+    color: white;
+    font-size: 1.3rem;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+    font-family:var(--fuenteSecundario);
+    font-weight: 700;
+}
+.contenido-pagina__curso{
+    margin-top: 2rem;
+}
+.contenido-pagina__cursos h2{
+    font-size: 2.5rem;
+}
+.boton-curso{
+    width: 14rem;
+    background-color: var(--primary);
+}
+.contenido-pagina__curso span{
+    text-transform: uppercase;
+    font-weight: 700;
+    font-family: var(--fuenteSecundario);
+}
+.contenido-pagina__curso p{
+    padding: 1rem 0;
+}
+footer{
+    margin-top: 5rem ;
+    height: 10vh;
+    background-color: var(--dark);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+footer p{
+    color: white;
+    
+    font-size: 1.2rem;
+    font-family: var(--fuenteSecundario);
+    
+}
+@media (max-width:480px){
+    .contenido-pagina__cursos{
+        display: none;
+    }
+    .contenido-pagina{
+        display: flex;
+        flex-direction: column;
+    }
+    .contenido-pagina h2{
+        text-align: center;
+    }
+}
+
+/* ------------------------------------------------------------ 
+------ CONTENIDO-NOSOTROS                                 
+------------------------------------------------------------ */
+.contenido-centrado{
+    margin: 0 15vw;
+}
+.contenido-centrado h2{
+    padding: 1rem 0;
+    font-family: var(--fuenteSecundario);
+}
+.contenido-pagina2{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    padding: 1rem 0;
+}
+.contenido-nosotros img{
+    object-fit: cover;
+}
+.contenido-nosotros__mensaje{
+    padding-top:1rem;
+}
+@media (max-width:480px){
+   
+    .contenido-pagina2{
+        display: flex;
+        flex-direction: column;
+    }
+}
+/* ------------------------------------------------------------ 
+------ CONTENIDO-CURSOS                                 
+------------------------------------------------------------ */
+.contenido__curso{
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap:  2rem;
+    margin: 2rem 0 ; 
+}
+.contenido__curso span{
+    text-transform: uppercase;
+    font-weight: 700;
+    font-family: var(--fuenteSecundario);
+}
+.contenido__curso p{
+    padding: 1rem 0;
+}
+.contenido__curso img{
+    object-fit: cover;
+}
+@media (max-width:480px){
+   
+    .contenido__curso{
+        display: flex;
+        flex-direction: column;
+    }
+    .contenido__curso p{
+        padding: .5rem;
+    }
+}
+
+
+
+
+/* ------------------------------------------------------------ 
+------ CONTENIDO-CONTACTO                              
+------------------------------------------------------------ */
+.formulario{
+    width: 90%;
+    margin: 0 auto;
+    background-color: white;
+    padding: 1rem;
+}
+.form-contenido{
+    display: flex;
+    margin: 1rem 0;
+}
+.form-contenido input, .form-contenido textarea{
+    width: 100%;
+    font-family: var(--fuenteSecundario);
+    
+}
+.form-contenido label{
+    display: flex;
+    justify-content: flex-end;
+    width: 7rem;
+    font-family: var(--fuenteSecundario);
+    font-size: 1.5rem;
+    font-weight: 700;
+    padding-right: 1rem;
+}
+.form-contenido a{
+    margin-left: 80%;
+}
+@media (max-width:480px){
+    .formulario{
+        width: 100%;
+    }
+   .form-contenido{
+       flex-direction: column;
+       align-items: center;
+   }
+   .form-contenido a{
+       margin: 0;
+       width: 100%;
+   }
+    
+}
+
